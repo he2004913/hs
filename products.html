@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+     <meta charset="UTF-8">
+     <title>果汁外卖 - 产品列表</title>
+     <style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #333;
+}
+
+.product-price {
+    color: #888;
+}
+
+.buy-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+/* 弹出窗口样式 */
+
+#order-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-height: 80%;
+	overflow-y:auto;
+}
+
+#order-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#order-form label {
+  margin-bottom: 5px;
+}
+
+#order-form input,
+#order-form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#order-form input[type="number"] {
+  min: 1;
+}
+
+#order-form input[type="submit"] {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#order-form button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.detail-button {
+    background-color: #337ab7;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.detail-button:hover {
+    background-color: #286090;
+}
+     </style>
+</head>
+<body>
+
+<div class="navbar">
+     <a href="index.html" target="_self">首页</a>
+     <a href="products.html" target="_self">产品列表</a>
+     <a href="contact.html" target="_self">联系我们</a>
+     <a href="query.html" target="_self">订单查询</a>
+</div>
+
+<div class="header">
+     <h1>果汁列表</h1>
+     <p>新鲜、健康、美味的果汁，为您带来一天的活力！</p>
+</div>
+
+<div class="product-list">
+  <div class="product">
+        <img src="picture/AD0IsIDbCRACGAAgz-bi6wUo9-mlXTCgBjigBg!700x700!700x700.jpg.webp" alt="猕猴桃汁">
+        <h2 class="product-name">猕猴桃汁</h2>
+    <p class="product-price">￥10.00</p>
+      <a href="#" class="buy-button" onclick="openOrderForm('猕猴桃汁', 10.00)">购买</a>
+      <a href="details1.html" class="detail-button">详情</a>
+    </div>
+  <div class="product">
+        <img src="picture/AD0IsIDbCRACGAAgz-bi6wUo2-mlXTCgBjigBg!700x700!700x700.jpg.webp" alt="芒果汁">
+        <h2 class="product-name">芒果汁</h2>
+    <p class="product-price">￥10.00</p>
+      <a href="#" class="buy-button" onclick="openOrderForm('芒果汁', 10.00)">购买</a>
+      <a href="details2.html" class="detail-button">详情</a>
+    </div>
+  <div class="product">
+        <img src="picture/AD0IsIDbCRACGAAg0Pbi6wUo_NXcmgIwoAY4oAY!700x700!700x700.jpg.webp" alt="火龙果汁">
+        <h2 class="product-name">火龙果汁</h2>
+    <p class="product-price">￥8.00</p>
+      <a href="#" class="buy-button" onclick="openOrderForm('火龙果汁', 8.00)">购买</a>
+      <a href="details3.html" class="detail-button">详情</a>
+    </div>
+  <div class="product">
+        <img src="picture/AD0IsIDbCRACGAAg0Pbi6wUowZDw8gIwoAY4oAY!700x700!700x700.jpg.webp" alt="蓝莓汁">
+        <h2 class="product-name">蓝莓汁</h2>
+    <p class="product-price">￥10.00</p>
+      <a href="#" class="buy-button" onclick="openOrderForm('蓝莓汁', 10.00)">购买</a>
+      <a href="details4.html" class="detail-button">详情</a>
+    </div>
+     <!-- 更多产品 -->
+</div>
+
+<div class="footer">
+     <p>版权所有 &copy; 果汁外卖</p>
+</div>
+
+<!-- 弹出窗口 -->
+<div id="order-form" style="display: none;">
+  <button onclick="closeOrderForm()">X</button>
+  <h2>填写订单信息</h2>
+
+
+
+  <h3>选择果汁: <span id="selected-juice"></span></h3>
+  <form id="order-form-content">
+    <label for="name">姓名：</label>
+    <input type="text" id="name">
+    <br>
+    <label for="phone">手机号：</label>
+    <input type="tel" id="phone">
+    <br>
+    <label for="quantity">购买数量：</label>
+    <input type="number" id="quantity" oninput="calculateTotalPrice(this)" min="1">
+    <br>
+    <label for="address">详细地址：</label>
+    <textarea id="address"></textarea>
+    <br>
+    <label for="total-price">总价：</label>
+    <span id="total-price">￥0.00</span>
+    <br>
+	<br>
+    <label>扫码支付</label>
+    <span> <img src="picture/90ad4e939195356614b46f423d231d46.jpg" width="100" height="120" alt="120"/></span>
+    <br>
+    <input type="submit" value="已扫码支付，确认购买">
+  </form>
+</div>
+
+<script>
+function openOrderForm(product, price) {
+  // 显示弹出窗口
+  document.getElementById("order-form").style.display = "block";
+  // 设置所选果汁信息
+  document.getElementById("selected-juice").textContent = product;
+  // 设置价格
+  document.getElementById("order-form-content").setAttribute("data-price", price);
+  // 重置购买数量为1
+  document.getElementById("quantity").value = 1;
+  // 初始时计算总价
+  calculateTotalPrice(document.getElementById("quantity"));
+}
+
+function closeOrderForm() {
+  // 关闭弹出窗口
+  document.getElementById("order-form").style.display = "none";
+}
+
+function calculateTotalPrice(inputElement) {
+  // 获取购买数量
+  var quantity = inputElement.value;
+  // 获取单价
+  var price = document.getElementById("order-form-content").getAttribute("data-price");
+  // 计算总价
+  var totalPrice = quantity * price;
+  // 更新总价显示
+  document.getElementById("total-price").innerHTML = "￥" + totalPrice.toFixed(2);
+}
+
+document.getElementById("order-form-content").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // 获取订单信息
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var quantity = document.getElementById("quantity").value;
+  var address = document.getElementById("address").value;
+  var totalPrice = document.getElementById("total-price").innerHTML;
+  var selectedJuice = document.getElementById("selected-juice").textContent;
+
+  // 保存信息到本地
+  var orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push({
+    juice: selectedJuice,
+    name: name,
+    phone: phone,
+    quantity: quantity,
+    address: address,
+    totalPrice: totalPrice,
+    purchaseTime: new Date().toLocaleString() // 添加购买时间信息
+  });
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  // 弹出提示
+  alert("滴滴！正常验证支付信息……中，验证成功后会有外卖员按时配送到家，请耐心等待，亲😊!");
+
+  // 关闭弹出窗口
+  document.getElementById("order-form").style.display = "none";
+});
+</script>
+</body>
+</html>
